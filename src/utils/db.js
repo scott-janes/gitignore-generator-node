@@ -39,7 +39,7 @@ exports.getTypesForAlias = async (alias) => {
 };
 
 exports.addNewType = async (newType) => {
-  if (await !doesDataExist(newType.alias)) {
+  if (!await doesDataExist(newType.alias)) {
     await db.get('types').push(newType).write();
   } else {
     throw new Error(
