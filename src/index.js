@@ -7,6 +7,7 @@ const {
   getTypesForAlias,
   addNewType,
   updateType,
+  deleteAlias,
 } = require('./utils/db');
 const {formatList, validateSchema} = require('./utils/converter');
 const {download, dbExists} = require('./utils/fetcher');
@@ -23,6 +24,7 @@ const cli = meow(
       --list, -l List all alias
       --make, -m make a new alias
       --update, -u update an alias
+      --delete, -d delete an alias
       --help, Displays the help menu
 
     Examples
@@ -30,6 +32,7 @@ const cli = meow(
       $ gig --list
       $ gig --make
       $ gig --update mj
+      $ gig --delete mj
       $ gig --help
 `,
     {
@@ -50,6 +53,10 @@ const cli = meow(
         update: {
           type: 'boolean',
           alias: 'u',
+        },
+        delete: {
+          type: 'boolean',
+          alias: 'd',
         },
       },
     }
@@ -85,6 +92,13 @@ const run = async (input, flags) => {
         updatedTypes.alias = input;
         await validateSchema(updatedTypes);
         await updateType(updatedTypes, input);
+      } catch (error) {
+        handleError(error);
+      }
+      break;
+    case 'delete':
+      try {
+        await deleteAlias(input);
       } catch (error) {
         handleError(error);
       }

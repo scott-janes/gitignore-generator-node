@@ -47,7 +47,7 @@ gig --help
     $ gig --help
 ```
 
-<img src="https://github.com/Y0l0McSwaggins/gitignore-generator-node/raw/master/media/example.gif" alt="example gig" width="499" height="550" />
+<img src="https://github.com/Y0l0McSwaggins/gitignore-generator-node/raw/master/media/example.gif" alt="example gig" width="700" height="550" />
 
 ## Testing
 
@@ -64,9 +64,15 @@ Currently there are two types of logging
 By default the info log is limegreen (#32CD32) and the error log is magenta (#FF00FF) these can be changed by setting the following environment variables with a corresponding hex value
 
 ```bash
-GIG_INFO_COLOUR=#fff
+export GIG_INFO_COLOUR=#fff
 ```
 
 ```bash
-GIG_ERROR_COLOUR=#fff
+export GIG_ERROR_COLOUR=#fff
+```
+
+To change the default location for where the .gig.json db file gets stored an environment variable can be set to change this
+
+```bash
+export GIG_DB_LOCATION='/tmp/test'
 ```

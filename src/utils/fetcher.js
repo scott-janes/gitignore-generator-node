@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 const util = require('util');
 const fs = require('fs');
 const streamPipeline = util.promisify(require('stream').pipeline);
+const {dbLocation} = require('./constants');
 const URL = 'https://www.toptal.com/developers/gitignore';
 
 exports.download = async (list) => {
@@ -22,6 +23,5 @@ exports.fetchTemplate = async (list) => {
 };
 
 exports.dbExists = () => {
-  const homedir = require('os').homedir();
-  return fs.existsSync(`${homedir}/.gig.json`);
+  return fs.existsSync(`${dbLocation}/.gig.json`);
 };
