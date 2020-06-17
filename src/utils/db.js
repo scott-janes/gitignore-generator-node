@@ -30,7 +30,6 @@ exports.list = async () => {
 };
 
 exports.getTypesForAlias = async (alias) => {
-  console.log(await doesDataExist(alias));
   if (await doesDataExist(alias)) {
     return await db.get('types').find({alias: alias}).value().types;
   } else {
