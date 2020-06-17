@@ -1,0 +1,39 @@
+{
+  "name": "gitignore-generator-node",
+  "version": "0.1.0",
+  "description": "gitignore generator cli tool",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src --ext .js",
+    "lint-fix": "eslint src --ext .js --fix"
+  },
+  "bin": {
+    "gig": "src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Y0l0McSwaggins/gitignore-generator-node.git"
+  },
+  "keywords": [],
+  "author": "Y0l0McSwaggins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Y0l0McSwaggins/gitignore-generator-node/issues"
+  },
+  "homepage": "https://github.com/Y0l0McSwaggins/gitignore-generator-node#readme",
+  "devDependencies": {
+    "acorn": "^7.3.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^5.15.1",
+    "eslint-config-google": "^0.14.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "console.table": "^0.10.0",
+    "lowdb": "^1.0.0",
+    "meow": "^7.0.1",
+    "node-fetch": "^2.6.0",
+    "prompts": "^2.3.2",
+    "yup": "^0.29.1"
+  }
+}
